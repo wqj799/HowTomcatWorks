@@ -1,4 +1,4 @@
-package com.ex02;
+
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -31,6 +31,7 @@ public class Response implements ServletResponse {
         try {
             File file = new File(Constants.WEB_ROOT, request.getUri());
             fis = new FileInputStream(file);
+            output.write("HTTP/1.0 200 OK\r\nContent-Type: text/html\r\n\r\n".getBytes());
             int ch = fis.read(bytes, 0, BUFFER_SIZE);
             while (ch != -1) {
                 output.write(bytes, 0, ch);

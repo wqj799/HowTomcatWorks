@@ -1,4 +1,4 @@
-package com.ex02;
+
 
 import java.io.File;
 import java.net.URL;

@@ -1,4 +1,4 @@
-package com.ex02;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,11 +22,12 @@ public class PrimitiveServlet implements Servlet{
     }
 
     @Override
-    public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+    public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
         System.out.println("from service");
-        PrintWriter out = res.getWriter();
-        out.println("Hello. Roses are red.");
-        out.print("Violetes are blue.");
+        PrintWriter out = response.getWriter();
+        out.write("HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n");
+        out.write("Hello. Roses are red.");
+        out.write("Violetes are blue.");
     }
 
     @Override
