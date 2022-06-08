@@ -23,7 +23,7 @@ public class Response {
         FileInputStream fis = null;
 
         try {
-            File file = new File(HttpServer.WEB_ROOT, request.getUri());
+            File file = new File(HttpServer.WEB_ROOT.substring(0, HttpServer.WEB_ROOT.length() - 1), request.getUri());
             if (file.exists()) {
                 fis = new FileInputStream(file);
                 int ch = fis.read(bytes, 0, BUFFER_SIZE);
