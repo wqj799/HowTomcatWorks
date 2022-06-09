@@ -25,9 +25,11 @@ public class PrimitiveServlet implements Servlet{
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
         System.out.println("from service");
         PrintWriter out = response.getWriter();
-        out.write("HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n");
-        out.write("Hello. Roses are red.");
-        out.write("Violetes are blue.");
+        out.println("HTTP/1.1 200 OK");
+        out.println("Content-Type: text/html");
+        out.println();
+        out.println("Hello. Roses are red.");
+        out.println("Violetes are blue.");
     }
 
     @Override
